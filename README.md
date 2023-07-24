@@ -8,7 +8,7 @@ run mvn clean install
 
 **API Endpoint**
 
-_POST /api/send-email_
+_POST /email/send
 
 Request Body
 The request body should be in JSON format with the following parameters:
