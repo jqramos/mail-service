@@ -2,6 +2,10 @@
 
 This document provides details on how to use the "Send Email" API, which allows you to send emails using a JSON request body via an HTTP POST method. The API is implemented using Java with Spring WebFlux and leverages the Mailgun and Mailjet email service to deliver emails.
 
+To run the application, you need to have Java 17 installed on your machine. 
+
+run mvn clean install
+
 **API Endpoint**
 
 _POST /api/send-email_
