@@ -1,6 +1,5 @@
 package com.mail.web;
 
-//create EmailController class rest api
 
 import com.mail.data.EmailDTO;
 import com.mail.service.EmailService;

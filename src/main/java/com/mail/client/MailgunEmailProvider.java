@@ -56,7 +56,6 @@ public class MailgunEmailProvider implements EmailProvider{
         MultiValueMap<String, String> payload = new LinkedMultiValueMap<>();
         payload.add("from", "<" + senderEmail + ">");
 
-        //check if emailDTO has cc
         if (emailDTO.getCc() != null && !emailDTO.getCc().isEmpty()) {
             StringBuilder cc = new StringBuilder();
             for(String ccEmail : emailDTO.getCc()) {
@@ -65,7 +64,6 @@ public class MailgunEmailProvider implements EmailProvider{
             payload.add("cc", cc.toString());
         }
 
-        //check if emailDTO has bcc
         if (emailDTO.getBcc() != null && !emailDTO.getBcc().isEmpty()) {
             StringBuilder bcc = new StringBuilder();
             for(String bccEmail : emailDTO.getBcc()) {
@@ -74,7 +72,6 @@ public class MailgunEmailProvider implements EmailProvider{
             payload.add("bcc", bcc.toString());
         }
 
-        //add to to payload
         if (emailDTO.getTo() != null && !emailDTO.getTo().isEmpty()) {
             StringBuilder to = new StringBuilder();
             for(String toEmail : emailDTO.getTo()) {
@@ -83,7 +80,6 @@ public class MailgunEmailProvider implements EmailProvider{
             payload.add("to", to.toString());
         }
 
-        //add from to payload
         payload.add("subject", emailDTO.getSubject());
         payload.add("text", emailDTO.getText());
         return payload;
